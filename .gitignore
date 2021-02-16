@@ -1,0 +1,8 @@
+py/__pycache__
+
+ex/_build/
+ex/deps/
+ex/erl_crash.dump
+ex/*.ez
+ex/doc/
+ex/.elixir_ls/
