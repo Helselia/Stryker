@@ -3,7 +3,7 @@ defmodule Toku do
 
   def start(_type, _args) do
     children = [
-      {Plug.Cowboy, [scheme: :http, plug: Toku.Router, options: [dispatch: dispatch(), port: 4999]]},
+      {Plug.Cowboy, [scheme: :http, plug: nil, options: [dispatch: dispatch(), port: 4999]]},
       {Registry, [keys: :duplicate, name: Registry.Toku]}
     ]
 

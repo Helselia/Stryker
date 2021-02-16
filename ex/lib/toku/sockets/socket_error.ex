@@ -28,11 +28,17 @@ defmodule Toku.Sockets.SocketError do
 end
 
 defmodule Toku.Sockets.SocketErrorCode do
+  # Unknown
   def unknown, do: 0
   def unknown_op, do: 1000
+
+  # Missing
   def missing_op, do: 2000
   def missing_d, do: 2001
   def missing_f, do: 2002
   def missing_seq, do: 2003
   def missing_v, do: 2004
+
+  # Common
+  def repeated_hello, do: 3000
 end

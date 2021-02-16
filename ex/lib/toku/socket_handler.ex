@@ -26,19 +26,32 @@ defmodule Toku.SocketHandler do
   def websocket_handle({:text, json}, state) do
     payload = Poison.decode!(json)
 
-    if not payload["op"] do
+    IO.inspect payload, label: "recieved payload"
+
+    if payload["op"] == nil do
+      IO.puts "payload missing opcode"
       {:reply, {:text, Poison.encode!(Toku.Sockets.SocketError.new(Toku.Sockets.SocketErrorCode.missing_op))}, state}
     else
+      IO.puts "entering try/catch"
       try do
+        IO.puts "recieved payload, checking against valid opcodes"
         if payload["op"] in opcode_list() do
-          handle_op(payload["op"], payload["f"], payload)
+          IO.puts "recieved payload with valid opcode"
+          {res, ste} = handle_op(payload["op"], payload["f"], payload, state)
+
+          IO.inspect res, label: "generated result"
+          IO.inspect ste, label: "modified state"
+
+          {:reply, {:text, Poison.encode!(res)}, ste}
         else
           throw(%{code: Toku.Sockets.SocketErrorCode.unknown_op})
         end
       catch
         %{code: code} ->
+          IO.puts "error occured with code: #{code}"
           {:reply, {:text, Poison.encode!(Toku.Sockets.SocketError.new(code))}, state}
         _ ->
+          IO.puts "unknown error occured, sending payload"
           {:reply, {:text, Poison.encode!(Toku.Sockets.SocketError.new(Toku.Sockets.SocketErrorCode.unknown))}, state}
       end
     end
@@ -62,7 +75,7 @@ defmodule Toku.SocketHandler do
     ]
   end
 
-  defp handle_op(opcode, flags, opts) do
-
+  defp handle_op(opcode, flags, opts, state) do
+    apply(Toku.Sockets.Handlers, :"handle_#{opcode}", [flags, state, opts])
   end
 end
