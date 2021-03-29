@@ -1,0 +1,6 @@
+%{
+  "connection": {:hex, :connection, "1.1.0", "ff2a49c4b75b6fb3e674bfc5536451607270aac754ffd1bdfe175abe4a6d7a68", [:mix], [], "hexpm", "722c1eb0a418fbe91ba7bd59a47e28008a189d47e37e0e7bb85585a016b2869c"},
+  "cowlib": {:hex, :cowlib, "2.10.1", "5442eb6b4eb1eb7f34df38145ecb59ba15932fa6465c1c10dc47c7eb91dea8cd", [:make, :rebar3], [], "hexpm", "9b4271e10228e6877199f1d698eaa3b32e69ae82cc68e1443c5ca8e774089a44"},
+  "jiffy": {:hex, :jiffy, "1.0.8", "60e36f00be35e5ac6e6cf2d4caf3bdf3103d4460aff385f543a8d7df2d6d9613", [:rebar3], [], "hexpm", "f9ae986ba5a0854eb48cf6a76192d9367086da86c20197da430630be7c087a4e"},
+  "ranch": {:hex, :ranch, "1.4.0", "10272f95da79340fa7e8774ba7930b901713d272905d0012b06ca6d994f8826b", [:rebar3], [], "hexpm", "53ad9c80918ea2b6d11e0c225d4396473c288d02c44c9ca5eb0aa2e1c85fecba"},
+}
