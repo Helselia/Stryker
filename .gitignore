@@ -1,6 +1,5 @@
-_build/
-deps/
-erl_crash.dump
-*.ez
-doc/
-.elixir_ls/
+dist/
+*.c
+build/
+*.egg-info
+.DS_Store
