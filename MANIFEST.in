@@ -1,0 +1,12 @@
+include py/toku/client.pyx
+include py/toku/exponential_backoff.pyx
+include py/toku/exponential_backoff.pxd
+include py/toku/opcodes.pxd
+include py/toku/opcodes.pyx
+include py/toku/socket_session.pyx
+include py/toku/socket_session.pxd
+include py/toku/socket_watcher.pxd
+include py/toku/socket_watcher.pyx
+include py/toku/stream_handler.pyx
+include py/toku/stream_handler.pxd
+include py/toku/toku_c.pxd
