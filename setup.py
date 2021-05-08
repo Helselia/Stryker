@@ -20,7 +20,7 @@ for file in glob.glob("py/toku/*.%s" % ext):
   ))
 
 if cythonize:
-  exts = cythonize(exts, compiler_directives={'language_level': '3'})
+  exts = cythonize(exts)
 
 setup(
   name='toku',
