@@ -1,4 +1,4 @@
-dist/*.egg
+dist/
 *.c
 build/
 *.egg-info

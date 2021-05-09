@@ -24,11 +24,11 @@ if cythonize:
 
 setup(
   name='toku',
-  version='0.2.12',
-  author='Constanze & Jake Heinz',
+  version='0.2.13',
+  author='Constanze',
   author_email='cstanze@helselia.dev',
   url='https://github.com/Helselia/Toku',
-  description='A simple stream based RPC - with a gevent client/server implementation',
+  description='A simple stream based RPC - with a gevent client/server implementation. A fork of discord/loqui',
   license='MIT',
   package_dir={
     '': 'py'

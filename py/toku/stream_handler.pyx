@@ -134,8 +134,8 @@ cdef class TokuStreamHandler:
     cdef char *buffer
     cdef size_t size
     cdef bytes data = bytes(b'%s|%s' % (
-      b','.join([bytes(b) for b in supported_encodings]),
-      b','.join([bytes(b) for b in supported_compressors])
+      b','.join([bytes(b, encoding='utf-8') for b in supported_encodings]),
+      b','.join([bytes(b, encoding='utf-8') for b in supported_compressors])
     ))
 
     rv = PyBytes_AsStringAndSize(data, &buffer, <Py_ssize_t*> &size)
