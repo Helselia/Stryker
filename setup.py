@@ -24,7 +24,7 @@ if cythonize:
 
 setup(
   name='toku',
-  version='0.2.13',
+  version='0.2.27',
   author='Constanze',
   author_email='cstanze@helselia.dev',
   url='https://github.com/Helselia/Toku',

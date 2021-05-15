@@ -153,7 +153,7 @@ cdef class TokuSocketSession:
         if not self._encoder_dumps:
             raise NoEncoderAvailable()
 
-        return 0, self._encoder_dumps(data)
+        return 0, bytes(self._encoder_dumps(data))
 
     cdef _decode_data(self, uint8_t flags, object data):
         if not self._is_ready:
@@ -340,10 +340,12 @@ cdef class TokuSocketSession:
             ping_request.set(pong)
 
     cdef _handle_hello(self, Hello hello):
-        encoding, encoder = self._pick_best_encoding(hello.supported_encodings)
+        print "First encoding: ", hello.supported_encodings[0]
+        print "Encoding type: ", type(hello.supported_encodings[0])
+        encoding, encoder = self._pick_best_encoding([bytes(b, encoding="utf-8") for b in str(hello.supported_encodings[0]).replace('\'', '').split(',')])
 
         if not encoding:
-            self.close(reason=CloseReasons.NO_MUTUAL_ENCODERS)
+            self.close(reason=bytes(CloseReasons.NO_MUTUAL_ENCODERS))
 
         else:
             self._encoder_dumps = encoder.dumps
@@ -376,6 +378,7 @@ cdef class TokuSocketSession:
             request.set_exception(TokuErrorReceived(error.code, error.data))
 
     cdef _pick_best_encoding(self, list encodings):
+        print "Looking for matching encodings: ", encodings
         for encoding in encodings:
             encoder = self._available_encoders.get(encoding)
             if encoder:
