@@ -1,5 +1,3 @@
-dist/
-*.c
+__pycache__/
+*.so
 build/
-*.egg-info
-.DS_Store

@@ -4,6 +4,9 @@ class TokuException(Exception):
 class TokuDecoderError(TokuException):
   pass
 
+class TokuEncoderError(TokuException):
+  pass
+
 class NoEncoderAvailable(TokuException):
   pass
 

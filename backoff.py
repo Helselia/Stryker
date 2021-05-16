@@ -1,6 +1,6 @@
 import random
 
-cdef class Backoff:
+class Backoff:
   def __init__(self, min_delay=0.5, max_delay=None, jitter=True):
     self._min = min_delay
     if max_delay is None:
@@ -12,17 +12,17 @@ cdef class Backoff:
     self._current = self._min
     self._fails = 0
   
-  cdef int fails(self):
+  def fails(self) -> int:
     return self._fails
   
-  cdef float current(self):
+  def current(self) -> float:
     return self._current
-
-  cdef void succeed(self):
+  
+  def succeed(self):
     self._fails = 0
     self._current = self._min
   
-  cdef float fail(self):
+  def fail(self) -> float:
     self._fails += 1
     delay = self._current * 2
     if self._jitter:
@@ -32,6 +32,6 @@ cdef class Backoff:
 
     if self._max:
       self._current = min(self._current, self._max)
-
+    
     self._current = round(self._current, 2)
     return self._current
