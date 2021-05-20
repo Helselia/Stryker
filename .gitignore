@@ -1,0 +1,20 @@
+*.pyc
+*.so
+.idea
+.cache
+build
+__pycache__
+.eggs
+.pytest_cache
+toku.egg-info
+*.c
+dist/
+cython_debug/
+
+
+# ex
+/_build
+/deps
+erl_crash.dump
+*.ez
+doc/

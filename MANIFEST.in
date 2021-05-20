@@ -1,0 +1,2 @@
+include setup.py
+recursive-include py/toku *.py *.c *.pyx *.pxd
