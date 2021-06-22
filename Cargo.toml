@@ -1,0 +1,11 @@
+[workspace]
+members = [
+  "toku_protocol",
+  "toku_connection",
+  "toku_client",
+  "toku_server",
+  "examples/echo",
+  "bench/server",
+  "bench/client",
+  "bench/common",
+]

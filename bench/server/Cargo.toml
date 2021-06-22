@@ -1,0 +1,12 @@
+[package]
+name = "toku_bench_server"
+version = "0.0.1"
+authors = ["Helselia Inc."]
+edition = "2018"
+
+[dependencies]
+failure = "0.1"
+toku_server = { path = "../../toku_server" }
+bytesize = "1.0.0"
+tokio = { version = "0.2", features = ["rt-core", "macros", "rt-threaded"] }
+toku_bench_common = { path = "../common" }

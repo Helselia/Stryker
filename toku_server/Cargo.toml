@@ -1,0 +1,15 @@
+[package]
+name = "toku_server"
+version = "0.0.1"
+authors = ["Helselia Inc."]
+edition = "2018"
+
+[dependencies]
+failure = "0.1"
+futures = "0.3"
+log = "0.4"
+toku_protocol = { path = "../toku_protocol" }
+toku_connection = { path = "../toku_connection" }
+tokio = { version = "0.2", features = ["rt-core", "tcp"] }
+bytesize = "1.0.0"
+tokio-util = { version = "0.2", features = ["codec"]}

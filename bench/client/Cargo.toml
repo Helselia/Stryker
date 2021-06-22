@@ -1,0 +1,14 @@
+[package]
+name = "toku_bench_client"
+version = "0.0.1"
+authors = ["Helselia Inc."]
+edition = "2018"
+
+[dependencies]
+failure = "0.1"
+toku_client = { path = "../../toku_client" }
+toku_bench_common = { path = "../common" }
+tokio = { version = "0.2", features = ["rt-core", "macros", "rt-threaded"] }
+bytesize = "1.0.0"
+futures = "0.3"
+log = "0.4"

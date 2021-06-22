@@ -1,0 +1,15 @@
+[package]
+name = "toku_examples_echo"
+version = "0.0.1"
+authors = ["Helselia Inc."]
+edition = "2018"
+
+[dependencies]
+failure = "0.1"
+toku_client = { path = "../../toku_client" }
+toku_server = { path = "../../toku_server" }
+tokio = { version = "0.2", features = ["rt-core", "macros", "time", "rt-threaded"] }
+log = "0.4"
+fern = "0.5"
+chrono = "0.4"
+bytesize = "1.0.0"
