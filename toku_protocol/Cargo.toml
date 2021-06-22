@@ -1,6 +1,6 @@
 [package]
 name = "toku_protocol"
-version = "0.0.1"
+version = "0.2.0"
 authors = ["Helselia Inc."]
 edition = "2018"
 

@@ -714,7 +714,7 @@ dependencies = [
 
 [[package]]
 name = "toku_client"
-version = "0.0.1"
+version = "0.1.1"
 dependencies = [
  "bytesize",
  "failure",
@@ -728,7 +728,7 @@ dependencies = [
 
 [[package]]
 name = "toku_connection"
-version = "0.0.1"
+version = "0.2.0"
 dependencies = [
  "backoff",
  "bytesize",
@@ -756,7 +756,7 @@ dependencies = [
 
 [[package]]
 name = "toku_protocol"
-version = "0.0.1"
+version = "0.2.0"
 dependencies = [
  "byteorder",
  "bytes",
@@ -767,7 +767,7 @@ dependencies = [
 
 [[package]]
 name = "toku_server"
-version = "0.0.1"
+version = "0.1.1"
 dependencies = [
  "bytesize",
  "failure",
