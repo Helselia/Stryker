@@ -3,6 +3,8 @@ name = "toku_connection"
 version = "0.2.0"
 authors = ["Helselia Inc."]
 edition = "2018"
+description = "RPC Transport Layer Connection"
+license = "MIT"
 
 [dependencies]
 failure = "0.1"

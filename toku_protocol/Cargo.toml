@@ -3,6 +3,8 @@ name = "toku_protocol"
 version = "0.2.0"
 authors = ["Helselia Inc."]
 edition = "2018"
+description = "RPC Transport Layer Protocol"
+license = "MIT"
 
 [dependencies]
 byteorder = "1.2.4"

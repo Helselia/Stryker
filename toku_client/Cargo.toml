@@ -3,6 +3,8 @@ name = "toku_client"
 version = "0.1.1"
 authors = ["Helselia Inc."]
 edition = "2018"
+description = "RPC Transport Layer Client Module"
+license = "MIT"
 
 [dependencies]
 toku_protocol = { path = "../toku_protocol", version = "0.2.0" }
